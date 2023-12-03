@@ -45,13 +45,12 @@ You can [find instructions for installing Git on various operating systems here]
 If you have not cloned the GRR Doc repository already, clone it with:
 
 ```
-git clone https://github.com/google/grr-doc
+git clone https://github.com/daschwanden/grr-sandbox
 ```
 
 ### Create configurations
 
 ```
-cd grr-doc/fleetspeak/sandbox
 ./createConfig.sh
 ```
 
@@ -69,7 +68,7 @@ You will have to create a ```demo``` user first. The script will ask you for a p
 
 You can create the ```demo``` user by executing the command listed in the box below.
 ```
-docker exec -it sandbox-grr-admin-1 /grr/venv/bin/grr_config_updater add_user demo
+docker exec -it grr-sandbox-grr-admin-1 /grr/venv/bin/grr_config_updater add_user demo
 ```
 With the ```demo``` user in place you can now point your browser to the GRR UI: [http://localhost:8000](http://localhost:8000)
 

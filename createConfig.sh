@@ -12,6 +12,8 @@ openssl ecparam -name prime256v1 -genkey -noout -out key-proxy.pem
 openssl req -new -x509 -key key-gw.pem -out cert-gw.pem -days 365 -subj "/C=AU/CN=fleetspeak-server" -addext "subjectAltName = DNS:fleetspeak-server"
 openssl req -new -x509 -key key-proxy.pem -out cert-proxy.pem -days 365 -subj "/C=AU/CN=fleetspeak-proxy" -addext "subjectAltName = DNS:fleetspeak-proxy"
 
+chmod 644 key-gw.pem key-proxy.pem
+
 export FRONTEND_PEM="$(cat cert-gw.pem | sed 's/^/      /g' | sed ':a;N;$!ba;s/\n/\\n/g' | sed 's/\$/\\$/g')"
 export FRONTEND_CERT=$(sed ':a;N;$!ba;s/\n/\\\\n/g' cert-gw.pem)
 export FRONTEND_KEY=$(sed ':a;N;$!ba;s/\n/\\\\n/g' key-gw.pem)
