@@ -2,7 +2,7 @@
 
 The following diagram shows the high level architecture of the sandbox environment.
 
-![sandbox fleetspeak](../images/sandbox_fleetspeak.png)
+![sandbox fleetspeak](./diagrams/sandbox_fleetspeak.png)
 
 This sandbox uses [Docker Compose](https://docs.docker.com/compose/) to demonstrate how to run [GRR](https://github.com/google/grr) and [Fleetspeak](https://github.com/google/fleetspeak) with [Envoy](https://www.envoyproxy.io/) leveraging Fleetspeak in the HTTPS header frontend mode.  
 This frontend mode lends itself to showcase an example of Fleetspeak's more involved frontend modes.  
